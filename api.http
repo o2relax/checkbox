@@ -1,0 +1,60 @@
+### POST store new book
+POST {{host}}/api/v1/books
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="file"; filename="cover.jpg"
+
+< ./public/cover.jpg
+
+--boundary
+Content-Disposition: form-data; name="title"
+
+Book title
+--boundary--
+
+### PATCH update book
+PATCH {{host}}/api/v1/books/1
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="file"; filename="cover.jpg"
+
+< ./public/cover.jpg
+
+--boundary
+Content-Disposition: form-data; name="title"
+
+Book title 2
+--boundary--
+
+### GET get books list
+GET {{host}}/api/v1/books
+Accept: application/json
+Content-Type: application/json
+
+### GET get one book
+GET {{host}}/api/v1/books/1
+Accept: application/json
+Content-Type: application/json
+
+### POST store new author
+POST {{host}}/api/v1/authors
+Content-Type: application/json; charset=utf-8
+Accept: application/json
+
+{
+  "name": "Name",
+  "surname": "Surname",
+  "last_name": "LastName"
+}
+
+### GET get authors list
+GET {{host}}/api/v1/authors
+Accept: application/json
+Content-Type: application/json
+
+### GET get one author
+GET {{host}}/api/v1/authors/1
+Accept: application/json
+Content-Type: application/json
