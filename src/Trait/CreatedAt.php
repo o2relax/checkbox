@@ -8,10 +8,7 @@ use Symfony\Component\Serializer\Attribute\Ignore;
 trait CreatedAt
 {
     #[ORM\Column(type: 'datetime')]
-    #[Ignore]
     private ?\DateTimeInterface $createdAt = null;
-
-
 
     public function getCreatedAt(): \DateTimeInterface
     {

@@ -11,6 +11,10 @@ Content-Disposition: form-data; name="file"; filename="cover.jpg"
 Content-Disposition: form-data; name="title"
 
 Book title
+--boundary
+Content-Disposition: form-data; name="authors[]"
+
+2
 --boundary--
 
 ### PATCH update book
@@ -30,6 +34,11 @@ Book title 2
 
 ### GET get books list
 GET {{host}}/api/v1/books
+Accept: application/json
+Content-Type: application/json
+
+### GET get books search
+GET {{host}}/api/v1/books?search=Book
 Accept: application/json
 Content-Type: application/json
 
